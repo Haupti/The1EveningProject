@@ -1,5 +1,5 @@
 # The1EveningProject
-I made this together and for a friend in one evening
+I made this together with and for a friend in one evening
 
 ## What it is
 This is a little script project that helps my friend Lukas to make his shopping list.
