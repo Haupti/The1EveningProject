@@ -69,12 +69,18 @@ class Wochenplan:
         c = canvas.Canvas('ShoppingList.pdf')
 
         form = c.acroForm
-
+        
+        manualIndex = 0
+        
         for index,element in enumerate(shoppingList):
-            entry = element[0].name + " : " + str(element[1]*element[0].portionsGroesse) + " " + str(element[0].einheit)
-            c.drawString(50, 800 - index*40 , entry)
-            form.checkbox(x=10, y= 800 - index*40, buttonStyle='check')
-
+            if (manualIndex < 20):
+                entry = element[0].name + " : " + str(element[1]*element[0].portionsGroesse) + " " + str(element[0].einheit)
+                c.drawString(50, 800 - index*40 , entry)
+                form.checkbox(x=10, y= 800 - index*40, buttonStyle='check')
+            else:
+                manualIndex = 0
+                c.showPage()
+                
         c.save()
 
 
